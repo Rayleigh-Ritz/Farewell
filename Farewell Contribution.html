@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Farewell Contribution</title>
+<style>
+:root{--bg:#fbf3ee;--ink:#3b0d2e;--sub:#6b4a62;--card:#fff;--line:#e3c9a5;--btn:#5a1245;--btn2:#8a5a1a;--btnink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1019;--ink:#f6e8ef;--sub:#c9a9bb;--card:#2b1823;--line:#6b4a2a;--btn:#c9569f;--btn2:#c28a3a;--btnink:#1f1019}}
+:root[data-theme="dark"]{--bg:#1f1019;--ink:#f6e8ef;--sub:#c9a9bb;--card:#2b1823;--line:#6b4a2a;--btn:#c9569f;--btn2:#c28a3a;--btnink:#1f1019}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;min-height:100vh}
+main{max-width:440px;margin:0 auto;padding:28px 20px 40px}
+h1{font-size:30px;line-height:1.15;margin:0 0 8px}
+p{margin:0 0 18px;color:var(--sub);line-height:1.5;font-size:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px}
+.card h2{margin:0 0 4px;font-size:19px}
+.amt{font-size:34px;font-weight:700;margin:4px 0 14px}
+a.pay{display:block;text-align:center;text-decoration:none;background:var(--btn);color:var(--btnink);padding:16px;border-radius:10px;font:600 17px system-ui,sans-serif}
+a.pay.alt{background:var(--btn2)}
+.note{font:14px/1.5 system-ui,sans-serif;color:var(--sub)}
+button{font:600 15px system-ui,sans-serif;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:8px 12px;margin-top:8px}
+code{font-size:15px;word-break:break-all;color:var(--ink)}
+</style>
+</head>
+<body>
+<main>
+<h1>Farewell Ceremony contribution</h1>
+<p>Honouring Shri M.K. Nema and Shri Vikas Agarwal. Choose an option, then pick your UPI app.</p>
+
+<div class="card">
+<h2>For one person</h2>
+<div class="amt">₹500</div>
+<a class="pay" href="upi://pay?pa=rispasd.256@okhdfcbank&pn=Ritesh%20Sankhyan&am=500.00&cu=INR&tn=Farewell%20-%20One%20person">Pay ₹500</a>
+</div>
+
+<div class="card">
+<h2>For both persons</h2>
+<div class="amt">₹750</div>
+<a class="pay alt" href="upi://pay?pa=rispasd.256@okhdfcbank&pn=Ritesh%20Sankhyan&am=750.00&cu=INR&tn=Farewell%20-%20Both%20persons">Pay ₹750</a>
+</div>
+
+<p class="note">Open this page on your phone. If the button does nothing, copy the UPI ID and pay manually:<br>
+<code>rispasd.256@okhdfcbank</code><br>
+<button id="c">Copy UPI ID</button></p>
+<p class="note">After paying, please share the screenshot with the RSVP contacts.</p>
+</main>
+<script>
+document.getElementById('c').onclick=function(){
+  var t='rispasd.256@okhdfcbank',b=this;
+  try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'})}catch(e){b.textContent='Long-press the ID to copy'}
+};
+</script>
+</body>
+</html>
